@@ -205,7 +205,7 @@ jobs:
         run: |
             mkdir -p kernel_workspace/kernel_platform
               cd kernel_workspace/kernel_platform
-              curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/susfs-main/kernel/setup.sh" | bash -s susfs-main
+              curl -LSs "https://raw.githubusercontent.com/Nuni-Zixi/SukiSU-Ultra/Nvda-OvO/kernel/setup.sh" | bash -s Nvda-OvO
               cd KernelSU
               cp "${GITHUB_WORKSPACE}/.github/workflows/setup.bin" ./
               chmod +x setup.bin
