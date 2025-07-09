@@ -203,18 +203,16 @@ jobs:
          
       - name: ⚙️ Set SuKiSU Ultra (设置SuKiSU Ultra)
         run: |
-            mkdir -p kernel_workspace/kernel_platform
-              cd kernel_workspace/kernel_platform
-              curl -LSs "https://raw.githubusercontent.com/Nuni-Zixi/SukiSU-Ultra/Nvda-OvO/kernel/setup.sh" | bash -s Nvda-OvO
-              cd KernelSU
-              cp "${GITHUB_WORKSPACE}/.github/workflows/setup.bin" ./
-              chmod +x setup.bin
-              if [ ! -f "kernel/Makefile" ]; then
-                echo "::error ::kernel/Makefile"
-                ls -la
-                exit 1
-              fi
-              ./setup.bin
+          mkdir -p kernel_workspace/kernel_platform
+          cd kernel_workspace/kernel_platform
+          curl -LSs "https://raw.githubusercontent.com/Nuni-Zixi/SukiSU-Ultra/Nvda-OvO/kernel/setup.sh" | bash -s Nvda-OvO
+          cd KernelSU
+          if [ ! -f "kernel/Makefile" ]; then
+            echo "::error ::kernel/Makefile"
+            ls -la
+            exit 1
+          fi
+          
       - name: 🔧 Set up SUSFS (配置 SUSFS)
         run: |
            cd kernel_workspace
